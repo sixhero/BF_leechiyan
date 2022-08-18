@@ -17,6 +17,7 @@ public:
         int i = pos, j = 0;
         while (i < str.length() && j < sub.length())
         {
+            //对两个串的数据进行匹配
             if (str[i] == sub[j])
             {
                 ++j;
@@ -24,6 +25,7 @@ public:
             }
             else
             {
+                //出现数据不匹配的情况，回退指针位置
                 i = i - j + 1;
                 j = 0;
             }
@@ -55,8 +57,10 @@ public:
             }
             else
             {
+                //从主串中找到与子串匹配的值在进行回退指针
                 while (i < str.length())
                 {
+                    //寻找匹配位置值
                     i++;
                     if (str[i] == sub[j])
                     {
@@ -65,6 +69,7 @@ public:
                 }
                 if (i < str.length())
                 {
+                    //回退指针位置
                     i = i - j;
                     j = 0;
                 }
